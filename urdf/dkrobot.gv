@@ -1,0 +1,56 @@
+digraph G {
+node [shape=box];
+"base_footprint" [label="base_footprint"];
+"base_link" [label="base_link"];
+"L_BBD1" [label="L_BBD1"];
+"L_BBD2" [label="L_BBD2"];
+"L_BBD3" [label="L_BBD3"];
+"L_BBD4" [label="L_BBD4"];
+"L_BBD5" [label="L_BBD5"];
+"L_BCD" [label="L_BCD"];
+"L_Xich" [label="L_Xich"];
+"R_BBD1" [label="R_BBD1"];
+"R_BBD2" [label="R_BBD2"];
+"R_BBD3" [label="R_BBD3"];
+"R_BBD4" [label="R_BBD4"];
+"R_BBD5" [label="R_BBD5"];
+"R_BCD" [label="R_BCD"];
+"R_xich" [label="R_xich"];
+"base_scan" [label="base_scan"];
+"imu_link" [label="imu_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_footprint" -> "base_footprint_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_footprint_joint" -> "base_link"
+"base_link" -> "L_BBD1_joint" [label="xyz: -0.0743311 0.103 0.0249997 \nrpy: -1.5708 0 0"]
+"L_BBD1_joint" -> "L_BBD1"
+"base_link" -> "L_BBD2_joint" [label="xyz: -0.0303311 0.103 0.0769997 \nrpy: -1.5708 0 0"]
+"L_BBD2_joint" -> "L_BBD2"
+"base_link" -> "L_BBD3_joint" [label="xyz: 0.0101689 0.103 0.0249997 \nrpy: -1.5708 0 0"]
+"L_BBD3_joint" -> "L_BBD3"
+"base_link" -> "L_BBD4_joint" [label="xyz: 0.0946689 0.103 0.0249997 \nrpy: -1.5708 0 0"]
+"L_BBD4_joint" -> "L_BBD4"
+"base_link" -> "L_BBD5_joint" [label="xyz: 0.129669 0.103 0.0619997 \nrpy: -1.5708 0 0"]
+"L_BBD5_joint" -> "L_BBD5"
+"base_link" -> "L_BCD_joint" [label="xyz: -0.108347 0.103 0.0599597 \nrpy: -1.5708 0 0"]
+"L_BCD_joint" -> "L_BCD"
+"L_BCD" -> "L_Xich_joint" [label="xyz: 0.118515 0.05996 0 \nrpy: 0 -0 0"]
+"L_Xich_joint" -> "L_Xich"
+"base_link" -> "R_BBD1_joint" [label="xyz: -0.0743311 -0.103 0.0249997 \nrpy: -1.5708 0 0"]
+"R_BBD1_joint" -> "R_BBD1"
+"base_link" -> "R_BBD2_joint" [label="xyz: -0.0303311 -0.103 0.0769997 \nrpy: -1.5708 0 0"]
+"R_BBD2_joint" -> "R_BBD2"
+"base_link" -> "R_BBD3_joint" [label="xyz: 0.0101689 -0.103 0.0249997 \nrpy: -1.5708 0 0"]
+"R_BBD3_joint" -> "R_BBD3"
+"base_link" -> "R_BBD4_joint" [label="xyz: 0.0946689 -0.103 0.0249997 \nrpy: -1.5708 0 0"]
+"R_BBD4_joint" -> "R_BBD4"
+"base_link" -> "R_BBD5_joint" [label="xyz: 0.129669 -0.103 0.0619997 \nrpy: -1.5708 0 0"]
+"R_BBD5_joint" -> "R_BBD5"
+"base_link" -> "R_BCD_joint" [label="xyz: -0.108363 -0.103 0.0599823 \nrpy: -1.5708 0 0"]
+"R_BCD_joint" -> "R_BCD"
+"R_BCD" -> "R_xich_joint" [label="xyz: 0.118525 0.0599826 0 \nrpy: 0 -0 2.978e-05"]
+"R_xich_joint" -> "R_xich"
+"base_link" -> "base_scan_joint" [label="xyz: 0.00060691 0.00054999 0.2025 \nrpy: 0 -0 0"]
+"base_scan_joint" -> "base_scan"
+"base_link" -> "imu_joint" [label="xyz: -0.072331 0.00025 0.094 \nrpy: 0 -0 0"]
+"imu_joint" -> "imu_link"
+}

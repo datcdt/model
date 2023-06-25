@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="dkrobot">
+  <link name="base_footprint"/>
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.012258 0.00026839 0.072674" rpy="0 0 0" />
+      <mass value="1.0367" />
+      <inertia
+        ixx="0.00085906"
+        ixy="-1.2002E-08"
+        ixz="7.8624E-06"
+        iyy="0.0023555"
+        iyz="1.6628E-11"
+        izz="0.0029948" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dkrobot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size = "0.310 0.250 -0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="L_BCD">
+    <inertial>
+      <origin
+        xyz="3.0497E-05 -2.6743E-05 -0.003944"
+        rpy="0 0 0" />
+      <mass value="0.036285" />
+      <inertia
+        ixx="3.951E-06"
+        ixy="1.478E-10"
+        ixz="3.6208E-10"
+        iyy="3.9434E-06"
+        iyz="5.3817E-09"
+        izz="4.4119E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/L_BCD.STL" />
+      </geometry>
+      <material
+        name="cylan">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_BCD_joint" type="continuous">
+    <origin
+      xyz="-0.108347290534696 0.103000000000001 0.0599596544378096"
+      rpy="-1.57079632679491 0 0" />
+    <parent link="base_link" />
+    <child link="L_BCD" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="L_Xich">
+    <inertial>
+      <origin xyz="-0.0015513 -0.050389 5.2454E-08" rpy="0 0 0" />
+      <mass value="0.055395" />
+      <inertia
+        ixx="6.1539E-06"
+        ixy="-9.062E-08"
+        ixz="-2.2837E-13"
+        iyy="6.3743E-06"
+        iyz="-3.3691E-15"
+        izz="6.9787E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/L_Xich.STL" />
+      </geometry>
+      <material
+        name="brown">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/L_Xich.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_Xich_joint" type="fixed">
+    <origin xyz="0.118514569646034 0.0599599572469961 0" rpy="0 0 0" />
+    <parent link="L_BCD" />
+    <child link="L_Xich" />
+    <axis xyz="0 0 0" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="R_BCD">
+    <inertial>
+      <origin xyz="1.7212E-05 -4.1015E-06 0.003944" rpy="0 0 0" />
+      <mass value="0.036285" />
+      <inertia
+        ixx="3.951E-06"
+        ixy="-1.478E-10"
+        ixz="3.6208E-10"
+        iyy="3.9434E-06"
+        iyz="-5.3817E-09"
+        izz="4.4119E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/R_BCD.STL" />
+      </geometry>
+      <material
+        name="cylan">
+        <color rgba="0 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.027" length="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_BCD_joint" type="continuous">
+    <origin xyz="-0.108362582516028 -0.102999999999996 0.0599822962593122" rpy="-1.57079632679489 0 0" />
+    <parent link="base_link" />
+    <child link="R_BCD" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="R_xich">
+    <inertial>
+      <origin xyz="-0.0015513 -0.050389 5.2454E-08" rpy="0 0 0" />
+      <mass value="0.055395" />
+      <inertia
+        ixx="6.1539E-06"
+        ixy="-9.062E-08"
+        ixz="-2.2839E-13"
+        iyy="6.3743E-06"
+        iyz="-3.3702E-15"
+        izz="6.9787E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dkrobot/meshes/R_xich.STL" />
+      </geometry>
+      <material name="brown">
+        <color rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/R_xich.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_xich_joint" type="fixed">
+    <origin
+      xyz="0.11852540365011 0.0599825989082124 0"
+      rpy="0 0 2.97800086403757E-05" />
+    <parent link="R_BCD" />
+    <child link="R_xich" />
+    <axis xyz="0 0 0" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="L_BBD1">
+    <inertial>
+      <origin xyz="7.2828E-07 2.3201E-07 3.5107E-07" rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4698E-06"
+        ixy="-2.3366E-11"
+        ixz="-3.6994E-11"
+        iyy="1.4699E-06"
+        iyz="-1.1775E-11"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dkrobot/meshes/L_BBD1.STL" />
+      </geometry>
+      <material name="black"> <color rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_BBD1_joint" type="continuous">
+    <origin xyz="-0.0743310822413043 0.103000000000001 0.0249996971806272" rpy="-1.57079632679491 0 0" />
+    <parent link="base_link" />
+    <child link="L_BBD1" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="L_BBD2">
+    <inertial>
+      <origin xyz="-7.5483E-07 1.2019E-07 3.5107E-07" rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4698E-06"
+        ixy="1.2619E-11"
+        ixz="3.8339E-11"
+        iyy="1.4699E-06"
+        iyz="-6.114E-12"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dkrobot/meshes/L_BBD2.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_BBD2_joint" type="continuous">
+    <origin
+      xyz="-0.0303310822413043 0.103000000000001 0.0769996971806272"
+      rpy="-1.57079632679491 0 0" />
+    <parent link="base_link" />
+    <child link="L_BBD2" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="L_BBD3">
+    <inertial>
+      <origin
+        xyz="7.4679E-07 1.6288E-07 3.5107E-07"
+        rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4698E-06"
+        ixy="-1.6803E-11"
+        ixz="-3.7934E-11"
+        iyy="1.4699E-06"
+        iyz="-8.2638E-12"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/L_BBD3.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_BBD3_joint" type="continuous">
+    <origin
+      xyz="0.0101689177586957 0.103000000000001 0.0249996971806272"
+      rpy="-1.57079632679491 0 0" />
+    <parent link="base_link" />
+    <child link="L_BBD3" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="L_BBD4">
+    <inertial>
+      <origin
+        xyz="6.5481E-07 3.9426E-07 3.5107E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.018151" />
+      <inertia
+        ixx="1.4699E-06"
+        ixy="-3.5742E-11"
+        ixz="-3.3265E-11"
+        iyy="1.4699E-06"
+        iyz="-2.0018E-11"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/L_BBD4.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_BBD4_joint" type="continuous">
+    <origin xyz="0.0946689177586958 0.103000000000001 0.0249996971806272" rpy="-1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="L_BBD4" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="L_BBD5">
+    <inertial>
+      <origin xyz="7.5148E-07 1.3964E-07 3.5107E-07" rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4698E-06"
+        ixy="-1.4488E-11"
+        ixz="-3.8172E-11"
+        iyy="1.4699E-06"
+        iyz="-7.0833E-12"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dkrobot/meshes/L_BBD5.STL" />
+      </geometry>
+      <material name="black">
+        <color rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="L_BBD5_joint" type="continuous">
+    <origin xyz="0.129668917758696 0.103000000000001 0.0619996971806273" rpy="-1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="L_BBD5" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="R_BBD1">
+    <inertial>
+      <origin xyz="-1.7175E-07 -7.4479E-07 -3.5107E-07" rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4699E-06"
+        ixy="-1.7675E-11"
+        ixz="-8.7146E-12"
+        iyy="1.4698E-06"
+        iyz="-3.7833E-11"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/R_BBD1.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_BBD1_joint" type="continuous">
+    <origin
+      xyz="-0.0743310822413064 -0.102999999999997 0.024999697180628"
+      rpy="-1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="R_BBD1" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="R_BBD2">
+    <inertial>
+      <origin
+        xyz="-7.6209E-07 5.8592E-08 -3.5107E-07"
+        rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4698E-06"
+        ixy="6.1336E-12"
+        ixz="-3.871E-11"
+        iyy="1.4699E-06"
+        iyz="2.9666E-12"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/R_BBD2.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_BBD2_joint" type="continuous">
+    <origin
+      xyz="-0.0303310822413065 -0.102999999999997 0.0769996971806279"
+      rpy="-1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="R_BBD2" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="R_BBD3">
+    <inertial>
+      <origin
+        xyz="-5.1491E-08 -7.626E-07 -3.5107E-07"
+        rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4699E-06"
+        ixy="-5.3874E-12"
+        ixz="-2.6059E-12"
+        iyy="1.4698E-06"
+        iyz="-3.8736E-11"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/R_BBD3.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_BBD3_joint" type="continuous">
+    <origin
+      xyz="0.0101689177586936 -0.102999999999999 0.0249996971806279"
+      rpy="-1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="R_BBD3" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="R_BBD4">
+    <inertial>
+      <origin
+        xyz="4.6032E-08 -7.6295E-07 -3.5107E-07"
+        rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4699E-06"
+        ixy="4.9186E-12"
+        ixz="2.3476E-12"
+        iyy="1.4698E-06"
+        iyz="-3.8752E-11"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/R_BBD4.STL" />
+      </geometry>
+      <material name="black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_BBD4_joint" type="continuous">
+    <origin
+      xyz="0.0946689177586935 -0.103000000000001 0.024999697180628"
+      rpy="-1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="R_BBD4" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="R_BBD5">
+    <inertial>
+      <origin
+        xyz="1.1695E-07 -7.5534E-07 -3.5107E-07"
+        rpy="0 0 0" />
+      <mass value="0.018151" />
+      <inertia
+        ixx="1.4699E-06"
+        ixy="1.2289E-11"
+        ixz="5.9496E-12"
+        iyy="1.4698E-06"
+        iyz="-3.8365E-11"
+        izz="2.7399E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/R_BBD5.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.02" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="R_BBD5_joint" type="continuous">
+    <origin
+      xyz="0.129668917758694 -0.103000000000001 0.061999697180628"
+      rpy="-1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="R_BBD5" />
+    <axis xyz="0 0 1" />
+    <dynamics friction="200" />
+  </joint>
+  <link name="base_scan">
+    <inertial>
+      <origin
+        xyz="-0.012128 0.00047915 -0.028964"
+        rpy="0 0 0" />
+      <mass value="0.57835" />
+      <inertia
+        ixx="0.000154"
+        ixy="-8.1854E-07"
+        ixz="3.3663E-06"
+        iyy="0.00018973"
+        iyz="-7.5462E-08"
+        izz="0.00032548" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dkrobot/meshes/base_scan.STL" />
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.105 0.08 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_scan_joint" type="fixed">
+    <origin xyz="0.00060691 0.00054999 0.2025" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="base_scan" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="imu_link">
+    <inertial>
+      <origin
+        xyz="0 3.1442E-18 0.0015"
+        rpy="0 0 0" />
+      <mass
+        value="0.001926" />
+      <inertia
+        ixx="1.4589E-07"
+        ixy="4.2904E-24"
+        ixz="-3.3072E-24"
+        iyy="6.5645E-08"
+        iyz="3.8686E-25"
+        izz="2.0865E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dkrobot/meshes/imu_link.STL" />
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <origin
+      xyz="-0.072331 0.00025 0.094"
+      rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <transmission name="L_BBD1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="L_BBD1">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="L_BBD1_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  <transmission name="R_BBD1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="R_BBD1">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="R_BBD1_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  <gazebo reference="L_BBD1">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.3</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="R_BBD1">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.3</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometrySource>world</odometrySource>
+      <publishOdomTF>true</publishOdomTF>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <publishWheelTF>false</publishWheelTF>
+      <publishTf>true</publishTf>
+      <publishWheelJointState>true</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+      <updateRate>30</updateRate>
+      <leftJoint>L_BBD1_joint</leftJoint>
+      <rightJoint>R_BBD1_joint</rightJoint>
+      <wheelSeparation>0.206</wheelSeparation>
+      <wheelDiameter>0.028765</wheelDiameter>
+      <wheelAcceleration>1</wheelAcceleration>
+      <wheelTorque>10</wheelTorque>
+      <rosDebugLevel>na</rosDebugLevel>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>imu_link</bodyName>
+      <frameName>imu_link</frameName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>0</updateRate>
+      <imu>
+        <noise>
+          <type>gaussian</type>
+          <rate>
+            <mean>0.0</mean>
+            <stddev>2e-4</stddev>
+            <bias_mean>0.0000075</bias_mean>
+            <bias_stddev>0.0000008</bias_stddev>
+          </rate>
+          <accel>
+            <mean>0.0</mean>
+            <stddev>1.7e-2</stddev>
+            <bias_mean>0.1</bias_mean>
+            <bias_stddev>0.001</bias_stddev>
+          </accel>
+        </noise>
+      </imu>
+    </plugin>
+  </gazebo>
+
+  <!-- <gazebo reference="base_scan">
+    <material>Gazebo/Orange</material>
+    <sensor type="gpu_ray" name="lds_lfcd_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>6.28319</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120</min>
+          <max>3.5</max>
+          <resolution>0.015</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_lds_lfcd_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>base_scan</frameName>
+      </plugin>
+    </sensor>
+  </gazebo> -->
+  <gazebo reference="base_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <gazebo reference="L_BCD">
+    <material>Gazebo/Cylan</material>
+  </gazebo>
+  <gazebo reference="R_BCD">
+    <material>Gazebo/Cylan</material>
+  </gazebo>
+  <gazebo reference="L_BBD2">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="L_BBD3">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="L_BBD4">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="L_BBD5">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="R_BBD2">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="R_BBD3">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="R_BBD4">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="R_BBD5">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <material name="black">
+      <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="dark">
+    <color rgba="0.3 0.3 0.3 1.0"/>
+  </material>
+  <material name="light_black">
+    <color rgba="0.4 0.4 0.4 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.4235 0.0392 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.871 0.812 0.7647 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+</robot>
